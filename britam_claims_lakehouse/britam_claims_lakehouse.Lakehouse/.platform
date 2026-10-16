@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Lakehouse",
+    "displayName": "britam_claims_lakehouse"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "6692d188-b2f5-b189-4a2d-5b6f01c2b3de"
+  }
+}
