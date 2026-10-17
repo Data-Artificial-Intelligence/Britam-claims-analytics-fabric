@@ -1,6 +1,6 @@
 ﻿# TIMSAdvantaged Codebase
 
-Generated: 10/17/2026 00:48:28
+Generated: 10/17/2026 14:27:15
 
 ---
 
@@ -161,7 +161,7 @@ This is an auto-created file for britam_claims_lakehouse
 ```ps1
 <#
 .EXAMPLE
-.\Generate-Codebook-TIMSAdvantaged.ps1 -ProjectPath "C:\Data\DH-Commercial-retail-360"
+.\Generate-Codebook-TIMSAdvantaged.ps1 -ProjectPath "C:\Data\britam-claims-analytics-fabric"
 #>
 
 param(
