@@ -5,4 +5,4 @@
 
 ### HTML Architecture Diagram
 ![Architecture](images/html_architecture.png)
-![Open this file in a browser](docs/architecture.html)
+[Open this file in a browser](docs/architecture.html)
