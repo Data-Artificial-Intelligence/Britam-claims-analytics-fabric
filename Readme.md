@@ -10,7 +10,7 @@
 [Open this file in a browser](docs/architecture.html)
 
 ### Britam Claims Executive Dashboard
-![Architecture](presentation/Britam_Claims_Executive_Dashboard.pdf)
+[Britam Claims Executive Dashboard](presentation/Britam_Claims_Executive_Dashboard.pdf)
 
 
 ## 🚀 Quick Start (Local Reproduction)
