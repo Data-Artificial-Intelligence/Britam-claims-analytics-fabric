@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "britam_claims_semantic_model"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "52d3a353-7153-a02c-40bb-30067d5ba31d"
+  }
+}

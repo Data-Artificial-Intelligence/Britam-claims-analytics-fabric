@@ -1,0 +1,90 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "d88db31765a0c4fe008d",
+  "position": {
+    "x": 553.36070947927806,
+    "y": 710.25225163049106,
+    "z": 5000,
+    "height": 349.82573587770452,
+    "width": 349.82573587770452,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "donutChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "claims_cleaned"
+                    }
+                  },
+                  "Property": "vehicle_category"
+                }
+              },
+              "queryRef": "claims_cleaned.vehicle_category",
+              "nativeQueryRef": "vehicle_category",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "claims_cleaned"
+                    }
+                  },
+                  "Property": "Total Claim Amount"
+                }
+              },
+              "queryRef": "claims_cleaned.Total Claim Amount",
+              "nativeQueryRef": "Total Claim Amount"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "claims_cleaned"
+                  }
+                },
+                "Property": "Total Claim Amount"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Claim Amount by Vehicle Category'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
