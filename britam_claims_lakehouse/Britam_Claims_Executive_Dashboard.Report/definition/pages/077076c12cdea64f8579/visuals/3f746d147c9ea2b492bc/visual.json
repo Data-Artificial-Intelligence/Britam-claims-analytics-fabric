@@ -19,6 +19,17 @@
               {
                 "textRuns": [
                   {
+                    "value": "Fraud flags concentrate significantly in Nairobi SUV claims (15% rate vs 5% baseline), suggesting targeted investigation resources should shift there.",
+                    "textStyle": {
+                      "fontFamily": "Times New Roman",
+                      "fontSize": "20pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
                     "value": ""
                   }
                 ]
