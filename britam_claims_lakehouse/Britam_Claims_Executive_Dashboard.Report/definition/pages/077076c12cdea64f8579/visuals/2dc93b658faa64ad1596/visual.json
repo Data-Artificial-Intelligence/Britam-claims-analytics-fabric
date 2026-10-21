@@ -98,23 +98,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "70b7c90517c1f963df57",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "claims_cleaned"
-              }
-            },
-            "Property": "vehicle_category"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }
