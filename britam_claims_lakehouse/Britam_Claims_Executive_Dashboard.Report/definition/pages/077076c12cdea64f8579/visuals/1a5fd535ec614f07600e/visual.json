@@ -217,51 +217,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "487bd537e7d6bc31cb04",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "claims_cleaned"
-              }
-            },
-            "Property": "region"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "175ee1dbd76ae0077d3e",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "claims_cleaned"
-              }
-            },
-            "Property": "vehicle_category"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "3c1e61a588bc790a6598",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "claims_cleaned"
-              }
-            },
-            "Property": "Segment Fraud Rate"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

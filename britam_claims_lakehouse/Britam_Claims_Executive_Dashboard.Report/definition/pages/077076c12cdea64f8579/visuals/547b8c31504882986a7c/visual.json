@@ -85,23 +85,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "6d2834a5649ddfc30607",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "claims_cleaned"
-              }
-            },
-            "Property": "region"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }
