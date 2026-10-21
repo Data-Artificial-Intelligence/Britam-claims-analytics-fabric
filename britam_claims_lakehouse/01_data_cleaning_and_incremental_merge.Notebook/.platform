@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "01_data_cleaning_and_incremental_merge"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "7fe27175-3cfe-bbaf-4bd7-5087dbe3cb04"
+  }
+}

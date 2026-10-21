@@ -1,0 +1,133 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "2cc8d7b490eba7159749",
+  "position": {
+    "x": 0,
+    "y": 268.96280721105791,
+    "z": 3000,
+    "height": 271.08062459067253,
+    "width": 944.54655130812455,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "claims_cleaned"
+                    }
+                  },
+                  "Property": "Segment Fraud Rate"
+                }
+              },
+              "queryRef": "claims_cleaned.Segment Fraud Rate",
+              "nativeQueryRef": "Segment Fraud Rate",
+              "format": "0.00 %;-0.00 %;0.00 %"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "claims_cleaned"
+                    }
+                  },
+                  "Property": "Baseline Fraud Rate"
+                }
+              },
+              "queryRef": "claims_cleaned.Baseline Fraud Rate",
+              "nativeQueryRef": "Baseline Fraud Rate",
+              "format": "0.00 %;-0.00 %;0.00 %"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "claims_cleaned"
+                    }
+                  },
+                  "Property": "Fraud Lift %"
+                }
+              },
+              "queryRef": "claims_cleaned.Fraud Lift %",
+              "nativeQueryRef": "Fraud Lift %",
+              "format": "0.00 %;-0.00 %;0.00 %"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "claims_cleaned"
+                  }
+                },
+                "Property": "Segment Fraud Rate"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "dc71c2fb5bb162998a3e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "claims_cleaned"
+              }
+            },
+            "Property": "Segment Fraud Rate"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "eb22f0b433db1ca16e70",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "claims_cleaned"
+              }
+            },
+            "Property": "Baseline Fraud Rate"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "52ea217814a4504c0179",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "claims_cleaned"
+              }
+            },
+            "Property": "Fraud Lift %"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

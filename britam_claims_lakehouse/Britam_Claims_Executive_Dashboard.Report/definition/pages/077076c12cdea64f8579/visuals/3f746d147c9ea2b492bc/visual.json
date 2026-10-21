@@ -1,0 +1,186 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "3f746d147c9ea2b492bc",
+  "position": {
+    "x": 976.313812002344,
+    "y": 540.04343180173043,
+    "z": 6000,
+    "height": 540.04343180173043,
+    "width": 944.54655130812455,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "🚩 ",
+                    "textStyle": {
+                      "fontFamily": "Times New Roman",
+                      "fontSize": "20pt",
+                      "color": "#222222"
+                    }
+                  },
+                  {
+                    "value": "Priority:",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Times New Roman",
+                      "fontSize": "20pt",
+                      "color": "#222222"
+                    }
+                  },
+                  {
+                    "value": " Audit all open Nairobi/SUV claims immediately.",
+                    "textStyle": {
+                      "fontFamily": "Times New Roman",
+                      "fontSize": "20pt",
+                      "color": "#222222"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "👮 ",
+                    "textStyle": {
+                      "fontFamily": "Times New Roman",
+                      "fontSize": "20pt",
+                      "color": "#222222"
+                    }
+                  },
+                  {
+                    "value": "Resource Shift:",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Times New Roman",
+                      "fontSize": "20pt",
+                      "color": "#222222"
+                    }
+                  },
+                  {
+                    "value": " Move 2 senior investigators from Mombasa/Low-Risk queues to Nairobi HQ.",
+                    "textStyle": {
+                      "fontFamily": "Times New Roman",
+                      "fontSize": "20pt",
+                      "color": "#222222"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "💰 ",
+                    "textStyle": {
+                      "fontFamily": "Times New Roman",
+                      "fontSize": "20pt",
+                      "color": "#222222"
+                    }
+                  },
+                  {
+                    "value": "Financial Impact:",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Times New Roman",
+                      "fontSize": "20pt",
+                      "color": "#222222"
+                    }
+                  },
+                  {
+                    "value": " Preventing just 1 fraudulent SUV claim saves approx. KES 25k–45k.",
+                    "textStyle": {
+                      "fontFamily": "Times New Roman",
+                      "fontSize": "20pt",
+                      "color": "#222222"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Recommended Action'"
+                }
+              }
+            },
+            "heading": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Heading3'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "20D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "spacing": [
+        {
+          "properties": {
+            "spaceAbovePlotArea": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

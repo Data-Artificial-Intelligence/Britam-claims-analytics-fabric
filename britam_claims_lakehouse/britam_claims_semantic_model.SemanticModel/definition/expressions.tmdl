@@ -1,0 +1,9 @@
+expression 'DirectLake - britam_claims_lakehouse' =
+		let
+		    Source = AzureStorage.DataLake("https://onelake.dfs.fabric.microsoft.com/822346d9-b6b9-4faa-81c7-c913ba6296fd/01c2b3de-5b6f-4a2d-b189-b2f56692d188", [HierarchicalNavigation=true])
+		in
+		    Source
+	lineageTag: b2c277b9-344e-4c30-aa9c-12f6d29d3299
+
+	annotation PBI_IncludeFutureArtifacts = False
+
