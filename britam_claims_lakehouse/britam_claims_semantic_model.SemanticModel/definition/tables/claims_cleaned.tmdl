@@ -1,0 +1,196 @@
+table claims_cleaned
+	lineageTag: 9bce5da4-a7a1-460d-a1ce-c185bc9514e2
+	sourceLineageTag: [dbo].[claims_cleaned]
+
+	measure 'Total Claims' = COUNTROWS('claims_cleaned')
+		formatString: 0
+		lineageTag: a5e8ba58-a383-4dc4-900a-09299d75844e
+
+		changedProperty = Name
+
+	measure 'Total Claim Amount' = SUM('claims_cleaned'[claim_amount])
+		lineageTag: d925f5df-64fb-4c31-876a-84bb63f6abd5
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Fraud Rate' =
+			
+			DIVIDE(
+			    CALCULATE([Total Claims], 'claims_cleaned'[is_fraud_flag] = 1),
+			    [Total Claims],
+			    0
+			)
+		lineageTag: 09032ce5-a46d-42ab-a24d-9d6f68520209
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Claim Severity' = AVERAGE('claims_cleaned'[claim_amount])
+		lineageTag: 4a1ae2dc-d449-47e3-b0e1-8683865791d5
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Baseline Fraud Rate' =
+			
+			CALCULATE(
+			    DIVIDE(
+			        CALCULATE([Total Claims], 'claims_cleaned'[is_fraud_flag] = 1),
+			        [Total Claims],
+			        0
+			    ),
+			    ALL('claims_cleaned') // <--- THIS forces it to ignore the slicers
+			)
+		lineageTag: 4d71c8a7-7e61-4843-9856-6aa451995822
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Segment Fraud Rate' =
+			
+			VAR CurrentRegion = SELECTEDVALUE('claims_cleaned'[region])
+			VAR CurrentCategory = SELECTEDVALUE('claims_cleaned'[vehicle_category])
+			
+			RETURN
+			CALCULATE(
+			    DIVIDE(
+			        CALCULATE([Total Claims], 'claims_cleaned'[is_fraud_flag] = 1),
+			        [Total Claims],
+			        0
+			    ),
+			    // Only apply filters if a single value is selected; otherwise calculate for all
+			    FILTER(
+			        ALLSELECTED('claims_cleaned'),
+			        ('claims_cleaned'[region] = CurrentRegion || ISBLANK(CurrentRegion)) &&
+			        ('claims_cleaned'[vehicle_category] = CurrentCategory || ISBLANK(CurrentCategory))
+			    )
+			)
+		lineageTag: 6503a3f4-0a63-435c-8cc0-71fc61c3fdce
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Fraud Lift %' = ```
+			
+			VAR CurrentRate = [Segment Fraud Rate]
+			VAR BaseRate = CALCULATE([Baseline Fraud Rate], ALL('claims_cleaned'))
+			RETURN
+			IF(ISBLANK(CurrentRate) || ISBLANK(BaseRate) || BaseRate = 0, 
+			   BLANK(), 
+			   DIVIDE(CurrentRate - BaseRate, BaseRate, 0)
+			)
+			```
+		lineageTag: 25b9b902-187c-43c9-8594-f9ce3b5f0faf
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column claim_id
+		dataType: string
+		lineageTag: 8ab20ade-8fbd-48f7-bbf8-8b06e2611bbe
+		sourceLineageTag: claim_id
+		summarizeBy: none
+		sourceColumn: claim_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column policy_id
+		dataType: string
+		lineageTag: c071658d-cbc2-4b70-893f-43a0ac593776
+		sourceLineageTag: policy_id
+		summarizeBy: none
+		sourceColumn: policy_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 0e961446-2b3d-46cb-b484-cd413d0318a2
+		sourceLineageTag: claim_date
+		summarizeBy: none
+		sourceColumn: claim_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_category
+		dataType: string
+		lineageTag: 010ab2e7-3b06-47de-a5e7-eb11c4cc35e6
+		sourceLineageTag: vehicle_category
+		summarizeBy: none
+		sourceColumn: vehicle_category
+
+		annotation SummarizationSetBy = Automatic
+
+	column region
+		dataType: string
+		lineageTag: fb1d6392-7f9d-4d25-98b8-6a33e3825dbd
+		sourceLineageTag: region
+		summarizeBy: none
+		sourceColumn: region
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_amount
+		dataType: double
+		lineageTag: c205e794-f5a1-442c-a189-3584f0f253e0
+		sourceLineageTag: claim_amount
+		summarizeBy: sum
+		sourceColumn: claim_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column claim_status
+		dataType: string
+		lineageTag: 4fcad7e2-f4c5-4380-b451-c96b766dae45
+		sourceLineageTag: claim_status
+		summarizeBy: none
+		sourceColumn: claim_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_fraud_flag
+		dataType: int64
+		formatString: 0
+		lineageTag: aba256c9-7a78-4ec1-bac2-3d5fd7a22623
+		sourceLineageTag: is_fraud_flag
+		summarizeBy: sum
+		sourceColumn: is_fraud_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column batch_id
+		dataType: int64
+		formatString: 0
+		lineageTag: f6b22dd6-5b30-4065-98e4-84809b1a6ec5
+		sourceLineageTag: batch_id
+		summarizeBy: sum
+		sourceColumn: batch_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_severity
+		dataType: string
+		lineageTag: 46bd6266-3271-4c2f-ac4c-4049226f3de1
+		sourceLineageTag: claim_severity
+		summarizeBy: none
+		sourceColumn: claim_severity
+
+		annotation SummarizationSetBy = Automatic
+
+	partition claims_cleaned = entity
+		mode: directLake
+		source
+			entityName: claims_cleaned
+			schemaName: dbo
+			expressionSource: 'DirectLake - britam_claims_lakehouse'
+
